@@ -1,0 +1,54 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Entities
+@model List<Cari>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cariler</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Cari Adı</th>
+        <th>Cari Soyadı</th>
+        <th>Cari Title</th>
+        <th>Mail Adresi</th>
+        <th>Şehir</th>
+        <th>Sil</th>
+        <th>Guncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+
+            <td>
+                @k.CariId
+            </td>
+            <td>
+                @k.CariName
+            </td>
+            <td>@k.CariLastName</td>
+            <td>@k.CariTitle</td>
+            <td>@k.CariMail</td>
+            <td>@k.CariCity</td>
+           
+            
+
+            <td><a href="/Cari/CariSil/@k.CariId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Cari/CariGetir/@k.CariId" class="btn btn-success">Guncelle</a></td>
+            <td><a href="/Cari/CariDetay/@k.CariId" class="btn btn-success" style="background-color: coral">Satış Geçmişi</a></td>
+
+        </tr>
+    }
+
+
+</table>
+
+<a href="/Cari/CariAdd" class="btn btn-info">Cari Ekle</a>
+
+

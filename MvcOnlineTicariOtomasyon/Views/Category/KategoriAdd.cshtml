@@ -1,0 +1,16 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Entities.Category
+@{
+    ViewBag.Title = "KategoriAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kategori Ekleme</h2>
+<br/>
+
+<form class="form-group" method="post">
+    @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
